@@ -1,0 +1,29 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make: Entering directory 'c:/Users/lucky/Desktop/tictactoe'
+echo "Creating build directory..."
+mkdir -p ./build
+echo "Compiling coding/main.cpp..."
+g++ -std=c++17 -Wall -I./src/include -c coding/main.cpp -o build/main.o
+ 
+echo "Creating build directory..."
+mkdir -p ./build
+echo "Compiling coding/mainmenu.cpp..."
+g++ -std=c++17 -Wall -I./src/include -c coding/mainmenu.cpp -o build/mainmenu.o
+echo "Creating build directory..."
+mkdir -p ./build
+echo "Compiling coding/player.cpp..."
+g++ -std=c++17 -Wall -I./src/include -c coding/player.cpp -o build/player.o
+ 
+echo "Creating build directory..."
+mkdir -p ./build
+echo "Compiling coding/rules.cpp..."
+g++ -std=c++17 -Wall -I./src/include -c coding/rules.cpp -o build/rules.o
+echo "Creating build directory..."
+mkdir -p ./build
+echo "Compiling coding/tictactoe.cpp..."
+g++ -std=c++17 -Wall -I./src/include -c coding/tictactoe.cpp -o build/tictactoe.o
+echo "Linking..."
+mkdir -p .
+g++ build/main.o build/mainmenu.o build/player.o build/rules.o build/tictactoe.o -o main.exe -L./src/lib -lsfml-graphics -lsfml-window -lsfml-system -lsfml audio
+make: Leaving directory 'c:/Users/lucky/Desktop/tictactoe'
+ 
